@@ -1,0 +1,24 @@
+name: the first workflow    # workflow name 
+on:                         # when the job will be triggered 
+  push: 
+    branches:
+      - main
+jobs: 
+  first-job: 
+    runs-on: ubuntu-latest    # runner type
+    steps:                    # steps
+      - name: print a welcome message
+        run: echo "welcome to our github actions workflow"
+  
+      - name: checkout repository
+        uses: actions/checkout@v4.2.2
+
+      - name: Touch new file and list all repo files
+        run: |
+          - touch newfile.txt
+          - ls -l 
+    
+  
+ 
+    
+    
