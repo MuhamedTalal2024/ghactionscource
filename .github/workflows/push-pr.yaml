@@ -17,10 +17,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4.2.2
 
-      - name: Install dependencies
-        working-directory: src
-        run: npm install
-
       - name: Run tests
         working-directory: src
         run: npm test
