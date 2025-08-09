@@ -1,5 +1,5 @@
 function greet(name) {
-    return 'Hello, ${name}!';
+    return `Hello, ${name}!`; // Use backticks for variable interpolation
 }
 
 module.exports = greet; // Ensure function is exportable
@@ -8,3 +8,4 @@ module.exports = greet; // Ensure function is exportable
 if (require.main === module) {
     console.log(greet("World"));
 }
+
