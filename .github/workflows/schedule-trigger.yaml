@@ -2,7 +2,7 @@ name: scheduled trigger workflow
 
 on:
   schedule:
-    - cron: "* * * * *"  # Runs every minute (UTC, but GitHub may run it every ~5 min)
+    - cron: "*/2 * * * *"  # Runs every minute (UTC, but GitHub may run it every ~5 min)
 
 jobs:
   schedule_job:
