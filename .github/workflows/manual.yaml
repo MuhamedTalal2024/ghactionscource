@@ -1,0 +1,12 @@
+on:
+  workflow_dispatch:
+
+
+jobs: 
+  message:    
+    runs-on: ubuntu-latest
+    steps: 
+      - name: echo message
+        run: |
+          echo "hello muhamed"
+          echo "hello talal"
