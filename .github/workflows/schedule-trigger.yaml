@@ -1,16 +1,15 @@
-name: sheduled trigger workflow
-on: 
-  schedule:
-    - cron: "* * * * *"
+name: scheduled trigger workflow
 
-jobs: 
-  schedule-job:
+on:
+  schedule:
+    - cron: "* * * * *"  # Runs every minute (UTC, but GitHub may run it every ~5 min)
+
+jobs:
+  schedule_job:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: echo message
         run: |
           echo "Hello Muhamed"
           echo "Hello Talal"
-
-
 
