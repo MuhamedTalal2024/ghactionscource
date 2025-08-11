@@ -1,14 +1,16 @@
+name: Manual Trigger 
+
 on:
   workflow_dispatch:
     inputs:
-      environment: 
-      required: true
-      default: "staging"
-      type: choise
-      options: 
-       - staging 
-       - production
-
+      environment:
+        description: "Select the environment to deploy"
+        required: true
+        default: "staging"
+        type: choice
+        options:
+          - staging
+          - production
 
 jobs: 
   message:    
@@ -17,3 +19,4 @@ jobs:
       - name: echo message
         run: |
           echo "deploying to ${{ inputs.environment }}"
+
