@@ -1,22 +1,12 @@
-name: Manual Trigger 
-
+name: Workflow by API Call
 on:
-  workflow_dispatch:
-    inputs:
-      environment:
-        description: "Select the environment to deploy"
-        required: true
-        default: "staging"
-        type: choice
-        options:
-          - staging
-          - production
+  repository_dispatch:
+    types: [incident_report]  # Custom event type name
 
-jobs: 
-  message:    
+jobs:
+  handle-incident:
     runs-on: ubuntu-latest
-    steps: 
-      - name: echo message
-        run: |
-          echo "deploying to ${{ inputs.environment }}"
+    steps:
+      - name: Print incident details
+        run: echo "Incident reported"
 
