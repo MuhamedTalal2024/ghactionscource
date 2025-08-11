@@ -1,5 +1,13 @@
 on:
   workflow_dispatch:
+    inputs:
+      environment: 
+      required: true
+      default: "staging"
+      type: choise
+      options: 
+       - staging 
+       - production
 
 
 jobs: 
@@ -8,5 +16,4 @@ jobs:
     steps: 
       - name: echo message
         run: |
-          echo "hello muhamed"
-          echo "hello talal"
+          echo "deploying to ${{ inputs.environment }}"
