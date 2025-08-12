@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - run: |
-        echo: "line 1"
+          echo: "line 1"
       working-directory: /
       shell: bash 
