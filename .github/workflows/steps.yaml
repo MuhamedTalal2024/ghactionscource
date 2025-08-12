@@ -7,5 +7,5 @@ jobs:
     steps: 
       - run: |
           echo: "line 1"
-      working-directory: /
-      shell: bash 
+        working-directory: /
+        shell: bash 
