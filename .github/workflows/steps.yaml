@@ -7,4 +7,4 @@ jobs:
     steps: 
       - run: |
           echo: "line 1"
-        working-directory: /temp
+        working-directory: /
