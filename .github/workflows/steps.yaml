@@ -1,11 +1,11 @@
 name: steps workflow
 on: workflow_dispatch
 
-  jobs: 
-    job_1: 
-      runs-on: ubuntu-latest
-      steps: 
-        - run: |
-            echo "line 1"
-          working-directory: /temp
-          shell: bach
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: |
+        echo: "line 1"
+      working-directory: /
+      shell: bash 
