@@ -7,5 +7,5 @@ on: workflow_dispatch
       steps: 
         - run: |
             echo "line 1"
-          working-directory: /
+          working-directory: /temp
           shell: bach
