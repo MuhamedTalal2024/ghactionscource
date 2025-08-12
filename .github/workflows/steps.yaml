@@ -8,4 +8,3 @@ jobs:
       - run: |
           echo: "line 1"
         working-directory: /temp
-        shell: bash 
