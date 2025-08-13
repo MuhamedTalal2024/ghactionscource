@@ -1,12 +1,23 @@
-name: actions workflow
+name: Containerized Workflow Example
 
 on:
   workflow_dispatch:
 
 jobs:
-  actions_jobs:
+  hybrid_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4.2.2
+      - name: Run a command in Ubuntu VM
+        run: echo "This runs on the Ubuntu VM"
+
+      - name: Run inside an Alpine container
+        uses: docker://alpine:3.14 # The image must be accessible without authentication
+        with:
+          entrypoint: /bin/sh
+          args: [
+            -c "echo 'This step runs inside an Alpine container'"
+          ]
+
+      - name: Run another command in Ubuntu VM
+        run: echo "Back to the VM"
 
