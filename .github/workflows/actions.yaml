@@ -1,0 +1,12 @@
+name: actions workflow
+
+on: 
+    workflow_dispatch
+jobs: 
+    actions_jobs:
+    runs-on: ubuntu-latest
+  steps: 
+    - name: checkout repository 
+      uses: actions/checkout@v4.2.2
+
+
