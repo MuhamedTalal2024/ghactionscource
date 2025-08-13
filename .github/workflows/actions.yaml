@@ -12,12 +12,7 @@ jobs:
 
       - name: Run inside an Alpine container
         uses: docker://alpine:3.14 # The image must be accessible without authentication
-        with:
-          entrypoint: /bin/sh
-          args: [
-            -c "echo 'This step runs inside an Alpine container'"
-          ]
-
+        run: echo "hellow"
       - name: Run another command in Ubuntu VM
         run: echo "Back to the VM"
 
