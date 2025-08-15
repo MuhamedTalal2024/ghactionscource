@@ -1,0 +1,21 @@
+name: manual trigger workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Choose which environment"
+        required: true
+        default: "staging"
+        type: choice
+        options:
+          - production
+          - staging
+
+jobs:
+  message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo message
+        run: |
+          echo "deploying to ${{ inputs.environment }}"
