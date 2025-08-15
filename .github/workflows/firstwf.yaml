@@ -1,11 +1,17 @@
-name: firstworkflow
-
-on: workflow_dispatch
-
-jobs:
-  job1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: echo hello it's my first job
+name: the first workflow    # workflow name 
+on:                         # when the job will be triggered 
+  push: 
+    branches:
+      - main
+jobs: 
+  first-job: 
+    runs-on: ubuntu-latest    # runner type
+    steps:                    # steps
+      - name: print a welcome message
+        run: echo "welcome to our github actions workflow"
+      - name: checkout repository
+        uses: actions/checkout@v4.2.2 # use ready Action to checkout to the main branch
+      - name: Touch new file and list all repo files
         run: |
-          echo "hello it's my first workflow"
+          touch newfile.txt
+          ls -l
