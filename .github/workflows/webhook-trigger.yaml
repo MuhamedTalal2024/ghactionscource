@@ -12,11 +12,11 @@ on:
       - main
 
 jobs:
-  test:
+  file_create:
     runs-on: ubuntu-latest
     steps:
       - name: checkout to the main repo
         uses: actions/checkout@v4.2.2
 
-      - name: remove src Directory
-        run: rm -rf src
+      - name: crate new file in src Directory
+        run: touch ./src/test.txt
