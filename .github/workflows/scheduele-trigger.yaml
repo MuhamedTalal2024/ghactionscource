@@ -1,15 +1,8 @@
-name: webhook workflow
+name: schedule workflow
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - .github/workflows/*.yaml
-      - src/*
-  pull_request:
-    branches:
-      - main
+  schedule: 
+    - cron: "*/5 * * * *"
 
 jobs:
   file_create:
