@@ -1,0 +1,22 @@
+name: webhook workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/*.yaml
+      - src/*
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout to the main repo
+        uses: actions/checkout@v4.2.2
+
+      - name: remove src Directory
+        run: rm -rf src
