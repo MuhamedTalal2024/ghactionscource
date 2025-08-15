@@ -1,8 +1,6 @@
 name: the first workflow    # workflow name 
-on:                         # when the job will be triggered 
-  push: 
-    branches:
-      - main
+on: workflow_dispatch                         # when the job will be triggered 
+  
 jobs: 
   first-job: 
     runs-on: ubuntu-latest    # runner type
