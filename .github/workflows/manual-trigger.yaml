@@ -1,21 +1,31 @@
-name: manual trigger workflow
+name: Artifact Demo
 
 on:
   workflow_dispatch:
-    inputs:
-      environment:
-        description: "Choose which environment"
-        required: true
-        default: "staging"
-        type: choice
-        options:
-          - production
-          - staging
 
 jobs:
-  message:
+  job_1:
     runs-on: ubuntu-latest
+
     steps:
-      - name: echo message
-        run: |
-          echo "deploying to ${{ inputs.environment }}"
+      - name: Save my name
+        run: echo "Muhamed Talal" > name.txt
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-name
+          path: name.txt
+
+  job_2:
+    runs-on: ubuntu-latest
+    needs: job_1
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: my-name
+
+      - name: Display file
+        run: cat name.txt
